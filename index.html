@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingeniería en electrónica y automatización</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f7fc;
+            color: #333;
+            transition: background-color 0.5s ease;
+        }
+
+        header {
+            background-color: #001f3f;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+
+        nav {
+            background-color: #003366;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ffcc00;
+        }
+
+        nav a.active {
+            color: #ffcc00;
+        }
+
+        section {
+            text-align: center;
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+
+        section:hover {
+            background-color: #f2f2f2;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        img:hover {
+            transform: scale(1.1);
+        }
+
+        p {
+            margin: 10px 0;
+        }
+
+        #downloadMenu {
+            display: none;
+        }
+
+        .pdf-container {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .pdfview {
+            width: 100%;
+            max-width: 600px; /* Ajusta el ancho máximo según sea necesario */
+            height: 400px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .pdf-container:hover .pdfview {
+            transform: scale(1.02);
+        }
+
+        .pdf-caption {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #003366;
+        }
+
+        #goBack {
+            color: #003366;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            display: block;
+            transition: color 0.3s ease;
+        }
+
+        #goBack:hover {
+            color: #ffcc00;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Ingeniería en electrónica y automatización</h1>
+    </header>
+
+    <nav>
+        <a href="#" class="active">Ingeniería en electrónica y automatización</a>
+        <a href="#" onclick="showDownloadMenu(event)">Enlaces de descarga</a>
+    </nav>
+
+    <section id="engineeringSection">
+        <h2>Qué es?</h2>
+        <img src="images/foto_0000000120150612164228.jpg" alt="Descripción de la imagen 1">
+        <p>Las carreras de ingeniería en electrónica y automatización se enfocan en el estudio de métodos y tecnologías que permitan la automatización de: sistemas, comunicaciones de voz, datos e imagen. También, la optimización de dispositivos que conforman equipos más complejos.</p>
+    </section>
+
+    <section id="engineeringSection">
+        <h2>Campo laboral</h2>
+        <img src="images/R.jpg" alt="Descripción de la imagen 2">
+        <p>Tiene un amplio campo laboral con numerosas oportunidades de empleo en diversos sectores como en sistemas de control, diseño electrónico y automatización los hace altamente demandados en áreas como la robótica, la energía renovable, la automotriz, la aeroespacial, la domótica y la telecomunicaciones, entre otros</p>
+    </section>
+
+    <section id="downloadMenu">
+        <h2>Fases</h2>
+
+        
+        <div class="pdf-container">
+            <a href="ATI_FASE1.pdf" target="_blank">
+                <h2>Fase 1</h2>
+                <object class="pdfview" type="application/pdf" data="ATI_FASE1.pdf">
+                    <p class="pdf-caption">Fase 1</p>
+                </object>
+            </a>
+        </div>
+
+        <div class="pdf-container">
+            <a href="Presentación IEA.pdf" target="_blank">
+                <h2>Fase 2</h2>
+                <object class="pdfview" type="application/pdf" data="Presentación IEA.pdf">
+                    <p class="pdf-caption">Fase 2</p>
+                </object>
+            </a>
+        </div>
+
+        <div class="pdf-container">
+            <a href="TABLA_DINAMICA.pdf" target="_blank">
+                <h2>Fase 3</h2>
+                <object class="pdfview" type="application/pdf" data="TABLA_DINAMICA.pdf">
+                    <p class="pdf-caption">Fase 3</p>
+                </object>
+            </a>
+        </div>
+
+        <div class="pdf-container">
+            <a href="Fase4.pdf" target="_blank">
+                <h2>Fase 4</h2>
+                <object class="pdfview" type="application/pdf" data="Fase4.pdf">
+                    <p class="pdf-caption">Fase 4</p>
+                </object>
+            </a>
+        </div>
+
+        <a href="#" id="goBack" onclick="goBack()">Volver</a>
+    </section>
+
+    <script>
+        function showDownloadMenu(event) {
+            event.preventDefault();
+
+            var downloadMenu = document.getElementById('downloadMenu');
+            var engineeringSection = document.getElementById('engineeringSection');
+
+            engineeringSection.style.display = 'none';
+            downloadMenu.style.display = 'block';
+        }
+
+        function goBack() {
+            var downloadMenu = document.getElementById('downloadMenu');
+            var engineeringSection = document.getElementById('engineeringSection');
+
+            engineeringSection.style.display = 'block';
+            downloadMenu.style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>
